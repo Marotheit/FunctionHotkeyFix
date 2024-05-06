@@ -1,10 +1,10 @@
-package nexus.slime.f3nperm.provider;
+package net.sanctuaryhosting.FunctionHotkeyFix.netty;
 
-import nexus.slime.f3nperm.F3NPermPlugin;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
+import net.sanctuaryhosting.FunctionHotkeyFix.FunctionHotkeyFixPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
@@ -16,92 +16,92 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-public abstract class NettyProvider implements Provider, Listener {
-    private final Map<Player, F3NPermChannelHandler> playerHandlers;
-
-    private F3NPermPlugin plugin;
-
+public abstract class NettyProvider implements ProviderInterface, Listener{
+    private final Map<Player, PlayerChannelHandler> playerHandlers;
+    
+    private FunctionHotkeyFixPlugin plugin;
+    
     public NettyProvider() {
         playerHandlers = new HashMap<>();
     }
-
+    
     public abstract void sendPacket(Player player);
-
+    
     public abstract void adjustPacket(Player player, Object packet);
-
+    
     public abstract Channel getChannel(Player player);
-
+    
     @Override
     public void update(Player player) {
         sendPacket(player);
     }
-
+    
     @Override
-    public void register(F3NPermPlugin plugin) {
+    public void register(FunctionHotkeyFixPlugin plugin) {
         this.plugin = plugin;
-
+        
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
-
+    
     @Override
-    public void unregister(F3NPermPlugin plugin) {
+    public void unregister(FunctionHotkeyFixPlugin plugin) {
         HandlerList.unregisterAll(this);
-
-        for (F3NPermChannelHandler handler : playerHandlers.values()) {
+        
+        for (PlayerChannelHandler handler : playerHandlers.values()) {
             handler.unregister();
         }
-
+        
         playerHandlers.clear();
     }
-
+    
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        F3NPermChannelHandler handler = playerHandlers.get(player);
-
+        PlayerChannelHandler handler = playerHandlers.get(player);
+        
         if (handler == null) {
             Channel channel = getChannel(player);
-            F3NPermChannelHandler newHandler = new F3NPermChannelHandler(player, channel);
-
+            PlayerChannelHandler newHandler = new PlayerChannelHandler(player, channel);
+            
             newHandler.register();
             playerHandlers.put(player, newHandler);
         }
     }
-
+    
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
-        F3NPermChannelHandler handler = playerHandlers.remove(event.getPlayer());
-
+        PlayerChannelHandler handler = playerHandlers.remove(event.getPlayer());
+        
         if (handler != null) {
             handler.unregister();
         }
     }
-
-    public F3NPermPlugin getPlugin() {
+    
+    public FunctionHotkeyFixPlugin getPlugin() {
         return plugin;
     }
-
-    public final class F3NPermChannelHandler extends ChannelDuplexHandler {
-        private static final String NAME = "f3nperm_handler";
-
+    
+    public final class PlayerChannelHandler extends ChannelDuplexHandler{
+        private static final String NAME = "functionhotkeyfix_handler";
+        
         private final Player player;
         private final Channel channel;
-
-        public F3NPermChannelHandler(Player player, Channel channel) {
+        
+        public PlayerChannelHandler(Player player, Channel channel) {
             this.player = player;
             this.channel = channel;
         }
-
+        
         public void register() {
             channel.pipeline().addBefore("packet_handler", NAME, this);
         }
-
+        
         public void unregister() {
             if (channel.pipeline().get(NAME) != null) {
                 channel.pipeline().remove(NAME);
             }
         }
-
+        
         @Override
         public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
             try {
@@ -109,7 +109,7 @@ public abstract class NettyProvider implements Provider, Listener {
             } catch (Exception e) {
                 getPlugin().getLogger().log(Level.SEVERE, "Could not adjust packet!", e);
             }
-
+            
             super.write(ctx, msg, promise);
         }
     }
