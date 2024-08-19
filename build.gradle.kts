@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
-    compileOnly("io.netty:netty-all:4.1.109.Final")
+    compileOnly("io.netty:netty-all:4.1.112.Final")
     compileOnly("net.luckperms:api:5.4")
 }
 
