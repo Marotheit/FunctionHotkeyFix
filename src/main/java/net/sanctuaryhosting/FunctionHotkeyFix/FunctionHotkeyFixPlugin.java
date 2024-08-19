@@ -23,7 +23,7 @@ public final class FunctionHotkeyFixPlugin extends JavaPlugin implements Listene
     @Override
     public void onLoad() {
         String version = Bukkit.getServer().getBukkitVersion();
-        if (!version.equals("1.20.6-R0.1-SNAPSHOT")) {
+        if (!version.equals("1.21.1-R0.1-SNAPSHOT")) {
             getLogger().warning("Server version not recognized. Proceed with caution! (Server Version: " + version + ")");
         }
         

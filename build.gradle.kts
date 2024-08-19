@@ -1,10 +1,10 @@
 plugins {
     java
-    id("io.papermc.paperweight.userdev") version "1.7.0"
+    id("io.papermc.paperweight.userdev") version "1.7.2"
 }
 
 group = "net.sanctuaryhosting"
-version = "1.20.6"
+version = "1.21.1"
 
 repositories {
     mavenCentral()
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.20.6-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
     compileOnly("io.netty:netty-all:4.1.109.Final")
     compileOnly("net.luckperms:api:5.4")
 }
