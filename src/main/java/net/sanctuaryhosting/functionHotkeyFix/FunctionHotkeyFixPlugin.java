@@ -1,9 +1,9 @@
-package net.sanctuaryhosting.FunctionHotkeyFix;
+package net.sanctuaryhosting.functionHotkeyFix;
 
-import net.sanctuaryhosting.FunctionHotkeyFix.hook.HookInterface;
-import net.sanctuaryhosting.FunctionHotkeyFix.hook.LuckPermsHook;
-import net.sanctuaryhosting.FunctionHotkeyFix.netty.ProviderException;
-import net.sanctuaryhosting.FunctionHotkeyFix.netty.ProviderInterface;
+import net.sanctuaryhosting.functionHotkeyFix.hook.HookInterface;
+import net.sanctuaryhosting.functionHotkeyFix.hook.LuckPermsHook;
+import net.sanctuaryhosting.functionHotkeyFix.netty.ProviderException;
+import net.sanctuaryhosting.functionHotkeyFix.netty.ProviderInterface;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;

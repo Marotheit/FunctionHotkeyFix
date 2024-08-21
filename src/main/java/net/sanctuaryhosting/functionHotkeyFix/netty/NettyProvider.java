@@ -1,10 +1,10 @@
-package net.sanctuaryhosting.FunctionHotkeyFix.netty;
+package net.sanctuaryhosting.functionHotkeyFix.netty;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
-import net.sanctuaryhosting.FunctionHotkeyFix.FunctionHotkeyFixPlugin;
+import net.sanctuaryhosting.functionHotkeyFix.FunctionHotkeyFixPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;

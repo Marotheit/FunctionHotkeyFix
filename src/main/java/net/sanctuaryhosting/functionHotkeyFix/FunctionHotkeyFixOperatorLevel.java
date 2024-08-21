@@ -1,4 +1,4 @@
-package net.sanctuaryhosting.FunctionHotkeyFix;
+package net.sanctuaryhosting.functionHotkeyFix;
 
 public enum FunctionHotkeyFixOperatorLevel{
     NO_PERMISSIONS(0), ACCESS_SPAWN(1), WORLD_COMMANDS(2), PLAYER_COMMANDS(3), ADMIN_COMMANDS(4);

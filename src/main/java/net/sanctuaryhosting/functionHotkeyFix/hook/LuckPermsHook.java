@@ -1,6 +1,6 @@
-package net.sanctuaryhosting.FunctionHotkeyFix.hook;
+package net.sanctuaryhosting.functionHotkeyFix.hook;
 
-import net.sanctuaryhosting.FunctionHotkeyFix.FunctionHotkeyFixPlugin;
+import net.sanctuaryhosting.functionHotkeyFix.FunctionHotkeyFixPlugin;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.event.EventSubscription;
 import net.luckperms.api.event.user.UserDataRecalculateEvent;

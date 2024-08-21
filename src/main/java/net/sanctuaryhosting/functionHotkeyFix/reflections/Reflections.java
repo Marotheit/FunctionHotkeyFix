@@ -1,4 +1,4 @@
-package net.sanctuaryhosting.FunctionHotkeyFix.reflections;
+package net.sanctuaryhosting.functionHotkeyFix.reflections;
 
 import org.bukkit.Bukkit;
 

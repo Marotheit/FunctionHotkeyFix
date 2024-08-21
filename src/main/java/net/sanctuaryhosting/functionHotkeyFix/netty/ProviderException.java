@@ -1,4 +1,4 @@
-package net.sanctuaryhosting.FunctionHotkeyFix.netty;
+package net.sanctuaryhosting.functionHotkeyFix.netty;
 
 public class ProviderException extends RuntimeException{
     

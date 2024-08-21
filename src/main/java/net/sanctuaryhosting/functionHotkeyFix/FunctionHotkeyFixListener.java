@@ -1,4 +1,4 @@
-package net.sanctuaryhosting.FunctionHotkeyFix;
+package net.sanctuaryhosting.functionHotkeyFix;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

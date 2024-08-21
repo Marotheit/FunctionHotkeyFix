@@ -8,9 +8,12 @@ version = "1.21.1"
 
 repositories {
     mavenCentral()
-    gradlePluginPortal()
-    maven("https://repo.papermc.io/repository/maven-public/")
-    maven("https://oss.sonatype.org/content/groups/public/")
+    maven("https://repo.papermc.io/repository/maven-public/") {
+        name = "papermc-repo"
+    }
+    maven("https://oss.sonatype.org/content/groups/public/") {
+        name = "sonatype"
+    }
 }
 
 dependencies {
@@ -20,7 +23,6 @@ dependencies {
 }
 
 val targetJavaVersion = 21
-
 java {
     val javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion

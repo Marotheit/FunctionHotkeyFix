@@ -1,6 +1,6 @@
-package net.sanctuaryhosting.FunctionHotkeyFix.netty;
+package net.sanctuaryhosting.functionHotkeyFix.netty;
 
-import net.sanctuaryhosting.FunctionHotkeyFix.FunctionHotkeyFixPlugin;
+import net.sanctuaryhosting.functionHotkeyFix.FunctionHotkeyFixPlugin;
 import org.bukkit.entity.Player;
 
 public interface ProviderInterface{

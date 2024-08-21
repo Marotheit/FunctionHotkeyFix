@@ -1,10 +1,10 @@
-package net.sanctuaryhosting.FunctionHotkeyFix;
+package net.sanctuaryhosting.functionHotkeyFix;
 
 import io.netty.channel.Channel;
-import net.sanctuaryhosting.FunctionHotkeyFix.netty.NettyProvider;
-import net.sanctuaryhosting.FunctionHotkeyFix.netty.ProviderException;
-import net.sanctuaryhosting.FunctionHotkeyFix.reflections.ReflectionException;
-import net.sanctuaryhosting.FunctionHotkeyFix.reflections.Reflections;
+import net.sanctuaryhosting.functionHotkeyFix.netty.NettyProvider;
+import net.sanctuaryhosting.functionHotkeyFix.netty.ProviderException;
+import net.sanctuaryhosting.functionHotkeyFix.reflections.ReflectionException;
+import net.sanctuaryhosting.functionHotkeyFix.reflections.Reflections;
 import org.bukkit.entity.Player;
 
 public class FunctionHotkeyFixPacketHandler extends NettyProvider{

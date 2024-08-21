@@ -1,8 +1,9 @@
 name: FunctionHotkeyFix
-version: ${version}
-main: net.sanctuaryhosting.FunctionHotkeyFix.FunctionHotkeyFixPlugin
+version: '1.21.1'
+main: net.sanctuaryhosting.functionHotkeyFix.FunctionHotkeyFixPlugin
 description: Provides permission node support for the F3+F4 (or F3+N) Gamemode Switcher hotkey.
 authors: [Rodney_Mc_Kay, Marotheit]
+website: https://github.com/Marotheit/FunctionHotkeyFix
 api-version: 1.21
 softdepend:
   - LuckPerms
